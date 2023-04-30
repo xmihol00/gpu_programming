@@ -1,0 +1,47 @@
+{
+  "name": "tc9",
+  "folder": "tests/tc9/",
+
+  "CPUoptions": [null, "Traditional", "StateSpace", "ParallelMatrix1", "ParallelMatrix2", "ParallelMatrix3", "...", "ParallelMatrixN"],
+  "CPU": "Traditional",
+  "GPU": true,
+  "createReference": false,
+  "runWithDevicePointers": true,
+
+  "runs": 10,
+
+  "signals" : {
+	"regenerate": false,
+    "generate": true,
+    "length": 256,
+    "min_sin_freq": 0.5,
+    "max_sin_freq": 1.2,
+    "min_sin_offset": 0,
+    "max_sin_offset": 2,
+    "min_sin_ampl": 0.5,
+    "max_sin_ampl": 0.5,
+    "min_noise_ampl": 0.5,
+    "max_noise_ampl": 0.5
+  },
+
+  "filter_cascades" : [
+    {
+      "duplicate": 4000,
+      "filters": [
+        [
+			[1, -0.746818753, 0],
+			[0.126, 0.126, 0]
+		],[
+			[1, -1.558, 0.637],
+			[0.069, -0.076452, 0.069]
+		]
+      ]
+    }
+  ],
+
+  "compare": true,
+  "compareThreshold": 0.001,
+  "compareMaxThreshold": 0.01,
+  "output": null,
+  "reference": "reference/"
+}

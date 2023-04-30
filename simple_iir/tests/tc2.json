@@ -1,0 +1,44 @@
+{
+  "name": "tc2",
+  "folder": "tests/tc2/",
+
+  "CPUoptions": [null, "Traditional", "StateSpace", "ParallelMatrix1", "ParallelMatrix2", "ParallelMatrix3", "...", "ParallelMatrixN"],
+  "CPU": "Traditional",
+  "GPU": true,
+  "createReference": false,
+  "runWithDevicePointers": false,
+
+  "runs": 1,
+
+  "signals" : {
+	"regenerate": false,
+    "generate": true,
+    "length": 512,
+    "min_sin_freq": 500,
+    "max_sin_freq": 1000,
+    "min_sin_offset": 0,
+    "max_sin_offset": 2,
+    "min_sin_ampl": 0.8,
+    "max_sin_ampl": 1,
+    "min_noise_ampl": 0,
+    "max_noise_ampl": 0.5
+  },
+
+  "filter_cascades" : [
+    {
+      "duplicate": 1000,
+      "filters": [
+        [
+          [1, -0.2, 1],
+          [0.1, 0.4, 0.1]
+        ]
+      ]
+    }
+  ],
+
+  "compare": true,
+  "compareThreshold": 0.001,
+  "compareMaxThreshold": 0.01,
+  "output": null,
+  "reference": "reference/"
+}

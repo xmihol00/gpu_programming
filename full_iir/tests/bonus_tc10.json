@@ -1,0 +1,53 @@
+{
+  "name": "tc10",
+  "folder": "tests/tc10/",
+
+  "CPUoptions": [null, "Traditional", "StateSpace", "ParallelMatrix1", "ParallelMatrix2", "ParallelMatrix3", "...", "ParallelMatrixN"],
+  "CPU": "Traditional",
+  "GPU": true,
+  "createReference": false,
+  "runWithDevicePointers": true,
+
+  "runs": 10,
+
+  "signals" : {
+	"regenerate": false,
+    "generate": true,
+    "length": 512,
+    "min_sin_freq": 0.5,
+    "max_sin_freq": 1.2,
+    "min_sin_offset": 0,
+    "max_sin_offset": 2,
+    "min_sin_ampl": 0.1,
+    "max_sin_ampl": 0.1,
+    "min_noise_ampl": 0.5,
+    "max_noise_ampl": 0.5
+  },
+
+  "filter_cascades" : [
+    {
+      "duplicate": 2000,
+      "filters": [
+        [
+			[1, -0.746],
+			[0.926, 0.926]
+		],[
+			[1, 0.637],
+			[0.69, 0.69]
+		],[
+			[1, -0.635],
+			[0.9, 0.9932]
+		],[
+			[1, 0.939],
+			[0.55,  0.55]
+		]
+      ]
+    }
+  ],
+
+  "compare": true,
+  "compareThreshold": 0.001,
+  "compareMaxThreshold": 0.01,
+  "output": null,
+  "reference": "reference/"
+}
