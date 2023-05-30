@@ -1,0 +1,7 @@
+build/
+.py
+log.txt
+*.csv
+.vscode/
+old_log.txt
+tables.md

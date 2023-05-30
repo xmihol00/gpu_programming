@@ -1,0 +1,4 @@
+build/
+log.txt
+old_log.txt
+*.csv
